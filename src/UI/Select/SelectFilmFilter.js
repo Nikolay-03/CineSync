@@ -1,7 +1,7 @@
 import React from 'react';
 import './SelectFilmFilter.css'
 
-const SelectFilmFilter = ({select, defaultValue, onChange, value}) => {
+const SelectFilmFilter = ({options, defaultValue, onChange, value}) => {
     return (
         <div className='genres__wrapper'>
             <select
@@ -10,8 +10,8 @@ const SelectFilmFilter = ({select, defaultValue, onChange, value}) => {
                 onChange={e => onChange(e.target.value)}
             >
                 <option disabled value=''>{defaultValue}</option>
-                {select.map(i =>
-                    <option key={i}>{i}</option>)
+                {options.map(i =>
+                    <option key={i}>{i[0].toUpperCase() + i.slice(1)}</option>)
                 }
             </select>
         </div>

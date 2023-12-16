@@ -8,7 +8,7 @@ const MovieCardsList = ({movies}) => {
             {movies.map(movie =>
                 <MovieCard
                     title={movie["nameRu"]}
-                    country={movie["countries"]['country']}
+                    countries={movie["countries"].map(gen => gen["country"]).join(', ')}
                     genres={movie["genres"].map(gen => gen["genre"]).join(', ')}
                     year={movie["year"]}
                     cardImg={movie["posterUrlPreview"]}

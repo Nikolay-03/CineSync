@@ -1,5 +1,5 @@
 .movie__cards{
-    margin-top: 100px;
+    margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;

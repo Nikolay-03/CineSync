@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/MoiveCard.css'
 
-const MovieCard = ({title, genres,country,year,cardImg,rating}) => {
+const MovieCard = ({title, genres,countries,year,cardImg,rating}) => {
     return (
         <div className='movie__wrapper'>
             <div className={rating < 5? 'rating poor__rating' : rating < 8? 'rating good__rating' : 'rating best__rating'}>{rating}</div>
@@ -10,7 +10,7 @@ const MovieCard = ({title, genres,country,year,cardImg,rating}) => {
                 <span className='movie__title'>{title}</span>
                 <span className='movie__genres'>{genres}</span>
                 <span className='movie__genres'>{year}</span>
-                <span className='movie__genres'>{country}</span>
+                <span className='movie__genres'>{countries}</span>
             </div>
         </div>
     );
