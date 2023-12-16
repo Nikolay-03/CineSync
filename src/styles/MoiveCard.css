@@ -1,0 +1,49 @@
+.movie__wrapper{
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    position: relative;
+    background:transparent;
+}
+.rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: .6;
+    position: absolute;
+    right: 10px;
+    top:10px;
+    width: 43px;
+    height: 43px;
+    background-color: #2d3033;
+    border-radius: 50%;
+}
+.poor__rating{
+    border: 1px solid #ad1c05;
+}
+.good__rating{
+    border: 1px solid #d46f17;
+}
+.best__rating{
+    border: 1px solid #55c94f;
+}
+.movie__card__img{
+    border-radius: 4px;
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+}
+.movie__info{
+    display: flex;
+    flex-direction: column;
+}
+.movie__title{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}
+.movie__genres{
+    color: #4b4e52;
+    font-size: 13px;
+}
