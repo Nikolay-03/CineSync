@@ -7,6 +7,7 @@ const MovieCardsList = ({movies}) => {
         <div className='movie__cards'>
             {movies.map(movie =>
                 <MovieCard
+                    key={movie.id}
                     title={movie["nameRu"]}
                     countries={movie["countries"].map(gen => gen["country"]).join(', ')}
                     genres={movie["genres"].map(gen => gen["genre"]).join(', ')}
