@@ -9,6 +9,7 @@ import {useMovies} from "./hooks/useMovies";
 import {useFetching} from "./hooks/useFetching";
 import MovieService from "./services/MovieService";
 import MovieFilter from "./components/MovieFilter";
+import Loader from "./UI/Loader/Loader";
 
 const App = () => {
     const [movies,setMovies] = useState([])
@@ -41,13 +42,18 @@ const App = () => {
                     AllGenres={AllGenres}
                     AllCountries={AllCountries}
                 />
-                <MovieCardsList movies={sortedAndSearchedMovies}/>
+                {movieError &&
+                    <h1>Произошла ошибка ${movieError}</h1>
+                }
+                {isLoading
+                    ? <div style={{display:"flex",justifyContent:"center",height:600,alignItems:"center"}}><Loader/></div>
+                    : <MovieCardsList movies={sortedAndSearchedMovies}/>
+                }
                 <div className='download__more'>
-                    <Button
-                        onClick={() => setPage(page => page+1)}
-                    >
-                        Загрузить еще
-                    </Button>
+                    {page <14
+                        ?<Button onClick={() => setPage(page => page+1)}>Загрузить еще</Button>
+                        : null
+                    }
                 </div>
             </div>
         </div>

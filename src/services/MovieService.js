@@ -6,7 +6,8 @@ export default class MovieService{
             headers: {
                 'X-API-KEY': '9ce7a5a1-7930-4505-952e-9186ae9ca206',
                 'Content-Type': 'application/json',
-            }
+            },
+
         })
         return response
     }
