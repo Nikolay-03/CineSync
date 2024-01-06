@@ -1,0 +1,76 @@
+.top__block {
+    margin-top: 50px;
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+.movie__img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    border-radius: 5px 0 0 5px; /* Добавлен радиус скругления для левого верхнего и нижнего углов */
+}
+
+.info {
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.main__info{
+    line-height: 20px;
+    width: 50%;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.circle{
+    background: #fff;
+    border-radius: 2px;
+    margin-inline: 3px;
+    width: 5px;
+}
+.short__descr{
+    color: #e0e0e0;
+}
+.poor_rating {
+    border: none;
+    background: -webkit-linear-gradient(66.47deg,#3d0909 -15.94%,#f00c0c 62.41%);
+    -webkit-background-clip: text; /* Для поддержки вебкит-браузеров */
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+.good_rating{
+    border: none;
+    background: -webkit-linear-gradient(66.47deg,#ffd9cf -15.94%,#ffa38a 62.41%);
+    -webkit-background-clip: text; /* Для поддержки вебкит-браузеров */
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+.best_rating{
+    border: none;
+    background: -webkit-linear-gradient(66.47deg,#bfe33d -15.94%,#00e4bb 62.41%);
+    -webkit-background-clip: text; /* Для поддержки вебкит-браузеров */
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+.logo{
+    max-width: 250px;
+    margin-bottom: 40px;
+}

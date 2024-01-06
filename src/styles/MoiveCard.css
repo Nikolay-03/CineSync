@@ -4,6 +4,8 @@
     height: auto;
     position: relative;
     background:transparent;
+    text-decoration: none;
+    cursor: pointer;
 }
 .rating{
     display: flex;
