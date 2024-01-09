@@ -9,7 +9,7 @@
     object-fit: fill;
     width: 100%;
     height: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .overlay {
@@ -19,7 +19,7 @@
     width: 110%;
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-    border-radius: 5px 0 0 5px; /* Добавлен радиус скругления для левого верхнего и нижнего углов */
+    border-radius: 10px 0 0 10px; /* Добавлен радиус скругления для левого верхнего и нижнего углов */
 }
 
 .info {
@@ -73,4 +73,29 @@
 .logo{
     max-width: 250px;
     margin-bottom: 40px;
+}
+.description__wrapper{
+    color: #fff;
+    margin-top: 70px;
+}
+.main__descr{
+    display: flex;
+    justify-content: space-between;
+    margin-block: 20px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+}
+.text__description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 10px;
+    width: 70%;
+}
+.slogan{
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 30px;
+    font-weight: 600;
 }

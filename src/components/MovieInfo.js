@@ -1,42 +1,29 @@
 import React from 'react';
 import '../styles/MovieInfo.css'
 import circle from '../UI/Icons/circle.png'
+import BanerWithInfo from "./BanerWithInfo";
+import Description from "./Description";
 
-const MovieInfo = ({movieImg, countries, shortdescr, genres,year,rate,filmLength,ageLimit,logo,data}) => {
+const MovieInfo = ({movieData,movieImg}) => {
+    const genres = movieData ? movieData['genres'].map(genre => genre['genre']).map(genre => genre[0].toUpperCase() + genre.slice(1)) : null
     return (
-        <div className='top__block'>
-            <div className='overlay'></div>
-            <img className='movie__img' src={movieImg} alt=""/>
-            <div className='main__info'>
-                {logo
-                    ?<img className='logo' src={logo} alt=""/>
-                    : <h1 style={{color:"white",marginBottom:40}}>{data['nameRu']}</h1>
-
-                }
-                <div className='info'>
-                    <div className={rate < 5 ? 'poor_rating' : rate < 8 ? 'good_rating' : 'best_rating'}>{rate}</div>
-                    <img className='circle' src={circle} alt=""/>
-                    {year}
-                    <img className='circle' src={circle} alt=""/>
-                    {`${filmLength} мин`}
-                    <img className='circle' src={circle} alt=""/>
-                    {ageLimit.slice(3)}+
-
-                </div>
-                <div className='info'>
-                    {genres
-                        ? genres.join(", ")
-                        : null
-                    }
-                    <img className='circle' src={circle} alt=""/>
-                    {countries
-                        ? countries.map(item => item['country']).join(", ")
-                        : null
-                    }
-                </div>
-                <div className="short__descr">{shortdescr}</div>
-            </div>
-
+        <div>
+            <BanerWithInfo genres={genres}
+                           data={movieData}
+                           movieImg={movieImg}
+                           logo={movieData["logoUrl"]}
+                           year={movieData["year"]}
+                           ageLimit={movieData["ratingAgeLimits"]}
+                           rate={movieData["ratingKinopoisk"]}
+                           filmLength={movieData["filmLength"]}
+                           countries={movieData['countries']}
+                           shortdescr={movieData["shortDescription"]}
+            />
+            <Description name={movieData['nameRu']}
+                         description={movieData["description"]}
+                         coverImg={movieData["coverUrl"]}
+                         slogan={movieData['slogan']}
+            />
         </div>
 
     );

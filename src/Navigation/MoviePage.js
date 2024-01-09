@@ -18,8 +18,7 @@ const MoviePage = () => {
         setMovieImg(responseUrl.data['items'][0]['imageUrl'])
     })
 
-    const genres = movieData ? movieData['genres'].map(genre => genre['genre']).map(genre => genre[0].toUpperCase() + genre.slice(1)) : null
-    console.log(genres)
+
     useEffect(() => {
         fetchMovieData()
     }, [id]);
@@ -30,16 +29,9 @@ const MoviePage = () => {
                 {isLoading
                 ? <div style={{display:"flex",justifyContent:"center",height:600,alignItems:"center"}}><Loader/></div>
                  : movieData
-                    ?<MovieInfo movieImg={movieImg}
-                                data={movieData}
-                                logo={movieData["logoUrl"]}
-                                year={movieData["year"]}
-                                ageLimit={movieData["ratingAgeLimits"]}
-                                rate={movieData["ratingKinopoisk"]}
-                                filmLength={movieData["filmLength"]}
-                                genres={genres}
-                                countries={movieData['countries']}
-                                shortdescr={movieData["shortDescription"]}
+                    ?<MovieInfo
+                            movieData={movieData}
+                            movieImg={movieImg}
                         />
                     :<div>Данные о фильме отсутствуют</div>
                 }
