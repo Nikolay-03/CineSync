@@ -25,8 +25,8 @@ h1{
     font-size: 50px;
     font-weight: 600;
 }
-.filter{
-    width: 430px;
+.filters__wrapper{
+    width:560px;
     display: flex;
     justify-content: space-between;
     margin-top: 50px;

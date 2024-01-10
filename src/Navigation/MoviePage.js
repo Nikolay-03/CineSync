@@ -22,7 +22,6 @@ const MoviePage = () => {
     useEffect(() => {
         fetchMovieData()
     }, [id]);
-    console.log(movieData)
     return (
         <div className='App__wrapper'>
             <div className="App">
@@ -33,7 +32,7 @@ const MoviePage = () => {
                             movieData={movieData}
                             movieImg={movieImg}
                         />
-                    :<div>Данные о фильме отсутствуют</div>
+                    :<h1 style={{color:'white'}}>Данные о фильме отсутствуют</h1>
                 }
             </div>
         </div>

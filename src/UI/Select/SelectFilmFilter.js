@@ -3,9 +3,8 @@ import './SelectFilmFilter.css'
 
 const SelectFilmFilter = ({options, defaultValue, onChange, value}) => {
     return (
-        <div className='genres__wrapper'>
             <select
-                className='genres'
+                className='filter'
                 value={value}
                 onChange={e => onChange(e.target.value)}
             >
@@ -14,7 +13,6 @@ const SelectFilmFilter = ({options, defaultValue, onChange, value}) => {
                     <option key={i}>{i[0].toUpperCase() + i.slice(1)}</option>)
                 }
             </select>
-        </div>
 
     );
 };

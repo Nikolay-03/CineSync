@@ -1,7 +1,7 @@
 .genres__wrapper{
     position: relative;
 }
-.genres{
+.filter{
     width: 200px;
     background: transparent;
     outline: none;
@@ -12,21 +12,21 @@
     cursor: pointer;
     color:#fff;
 }
-.genres:hover {
+.filter:hover {
     border-color: #aaa;
 }
-.genres:focus {
+.filter:focus {
     border-color: #4a90e2;
     box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
 }
 .clear-button {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
+    width: 100px;
+    background: transparent;
+    outline: none;
+    padding: 8px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     cursor: pointer;
-    color: #888;
+    color:#fff;
 }

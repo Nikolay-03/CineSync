@@ -1,9 +1,10 @@
 import React from 'react';
 import SelectFilmFilter from "../UI/Select/SelectFilmFilter";
+import Button from "../UI/Button/Button";
 
 const MovieFilter = ({filter,setFilter,AllGenres,AllCountries}) => {
     return (
-        <div className='filter'>
+        <div className='filters__wrapper'>
             <SelectFilmFilter
                 value={filter.sort.genre}
                 options={AllGenres}
@@ -14,6 +15,11 @@ const MovieFilter = ({filter,setFilter,AllGenres,AllCountries}) => {
                 options={AllCountries}
                 defaultValue='Страна'
                 onChange={selectedSort => setFilter({...filter,sort: {...filter.sort,country: selectedSort}})}/>
+            <Button
+                className='clear-button'
+                onClick={selectedSort => setFilter({...filter,sort: {genre: '',country: ''}})}
+            >
+            Сбросить</Button>
         </div>
     );
 };

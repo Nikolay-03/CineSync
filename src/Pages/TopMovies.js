@@ -44,14 +44,17 @@ const TopMovies = () => {
                 }
                 {isLoading
                     ? <div style={{display:"flex",justifyContent:"center",height:600,alignItems:"center"}}><Loader/></div>
-                    : <MovieCardsList movies={sortedAndSearchedMovies}/>
+                    : sortedAndSearchedMovies.length ===0
+                        ? <h1>Ничего не найдено</h1>
+                        : <MovieCardsList movies={sortedAndSearchedMovies}/>
                 }
                 <div className='download__more'>
-                    {page <14 && !isLoading
-                        ?<Button onClick={() => setPage(page => page+1)}>Загрузить еще</Button>
+                    {page < 14 && !isLoading && sortedAndSearchedMovies.length === 20
+                        ? <Button onClick={() => setPage(page => page + 1)}>Загрузить еще</Button>
                         : null
                     }
                 </div>
+
             </div>
         </div>
     );
